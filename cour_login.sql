@@ -27,8 +27,6 @@ SET time_zone = "+00:00";
 -- Structure de la table `users`
 --
 
-CREATE DATABASE cour_login; 
-USE cour_login ;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
@@ -72,3 +70,15 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE roles (
+  `id` int(11) NOT NULL,
+  `role_name` varchar(255) NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO roles (role_name) VALUES ('admin '), ('user'); 
+
+ALTER TABLE users ADD COLUMN role_id INT DEFAULT 2;
+
+ALTER TABLE users 
+ADD CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES roles(id);
