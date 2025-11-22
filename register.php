@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
     $passwordConfirm = trim($_POST['password_confirm']);
 
+
     if ($nom === "" || $email === "" || $adresse === "" || $password === "" || $passwordConfirm === "") {
         die("Tous les champs sont obligatoires.");
     }
@@ -27,6 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Cet email existe déjà.");
     }
 
+    if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/", $password)) {
+        die("Le mot de passe doit contenir au minimum une MAJUSCULE, 1 chiffre et un charact€r $pecial");
+    }
+
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     if (creerUtilisateur($pdo, $nom, $email, $passwordHash, $adresse)) {
@@ -34,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Erreur lors de l'inscription.";
     }
+    
 }
 ?>
 
