@@ -20,7 +20,9 @@ $user = getUserById($pdo, $_SESSION['user_id']);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Espace Utilisateur</title>
     </head>
-    <header><h1>Compte de <?php echo $_SESSION['user_nom']; ?></h1></header>
+    <body>
+    <header>
+    <h1>Compte de <?php echo $_SESSION['user_nom']; ?></h1>
     <ul>
         <li>
             <a href="delete.php">Suppression du compte</a>
@@ -29,13 +31,15 @@ $user = getUserById($pdo, $_SESSION['user_id']);
             <a href="logout.php">Déconnexion</a>
         </li>
     </ul>
-    <body>
-        <h6>Infos Compte : </h6>
+    </header>
+    <main>
+        <h3>Infos Compte : </h3>
         <br>
         <p><strong> Email :</strong> <?php echo $user['email']; ?></p>
         <br>
-        <p><strong> Adresse : </strong> <?php echo $user['email']; ?></p>
+        <p><strong> Adresse : </strong> <?php echo $user['adresse']; ?></p>
         <br>
         <p><strong>Role </strong><?php echo $_SESSION['role']; ?></p>
+    </main>
     </body>
 </html>

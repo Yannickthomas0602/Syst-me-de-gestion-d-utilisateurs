@@ -88,4 +88,15 @@ function getUserById($pdo, $id) {
     $stmt->execute([$id]);
     return $stmt->fetch();
 }
+
+function getAllUsers($pdo) {
+    $stmt = $pdo->query("SELECT u.id, u.nom, u.email, u.adresse, r.role_name FROM users u JOIN roles r ON u.role_id = r.id");
+    return $stmt->fetchAll();
+}
+
+function updateUser($pdo, $id, $nom, $email, $adresse, $role_id) {
+    $stmt = $pdo->prepare("UPDATE users SET nom = ?, email = ?, adresse = ?, role_id = ? WHERE id = ?");
+    return $stmt->execute([$nom, $email, $adresse, $role_id, $id]);
+
+}
 ?>
