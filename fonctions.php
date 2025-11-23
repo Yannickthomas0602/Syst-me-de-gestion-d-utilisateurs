@@ -5,7 +5,7 @@
 // ---------------------------------------
 function getDB() {
     $host = "localhost";
-    $dbname = "gestion_users";
+    $dbname = "cour_login";
     $username = "root";
     $password = "";
 
@@ -52,7 +52,7 @@ function creerUtilisateur($pdo, $nom, $email, $passwordHash, $adresse) {
 // Récupérer un utilisateur par email
 // ---------------------------------------
 function getUserByEmail($pdo, $email) {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt = $pdo->prepare("SELECT u.*, r.role_name FROM users u JOIN roles r ON u.role_id = r.id WHERE u.email = ?");
     $stmt->execute([$email]);
     return $stmt->fetch();
 }

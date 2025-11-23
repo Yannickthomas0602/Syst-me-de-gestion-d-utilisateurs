@@ -24,8 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_nom'] = $user['nom'];
+    $_SESSION['role'] = $user['rle_name']; 
 
-    header("Location: tableau.php");
+    // Redirection vers le bon espace, utilisateur ou admin 
+    if ($user['role_name'] === 'admin') {
+        header("Location: admin.php");
+    } else {
+        header("Location: user.php");
+    }
     exit;
 }
 ?>
