@@ -83,4 +83,9 @@ function deleteAccount($pdo, $id){
     $stmt->execute([$id]);
 }
 
+function getUserById($pdo, $id) {
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch();
+}
 ?>
