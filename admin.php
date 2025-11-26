@@ -33,17 +33,6 @@ $admin = $stmt->fetchAll();
     </ul>
     </header>
     <main>
-        <div name="infos">
-            <fieldset>
-                <h3>Infos Compte : </h3>
-                <br>
-                <p><strong> Email :</strong> <?php echo $admin['email']; ?></p>
-                <br>
-                <p><strong> Adresse : </strong> <?php echo $admin['adresse']; ?></p>
-                <br>
-                <p><strong>Role </strong><?php echo $_SESSION['role']; ?></p>
-            </fieldset>
-        </div>
         <div name="liste_users">
             <table>
                 <tr>
