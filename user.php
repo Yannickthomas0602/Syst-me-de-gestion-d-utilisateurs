@@ -19,11 +19,15 @@ $user = getUserById($pdo, $_SESSION['user_id']);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Espace Utilisateur</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://kit.fontawesome.com/57965235cc.js" crossorigin="anonymous"></script>
     </head>
     <body>
-    <header>
-    <h1>Compte de <?php echo $_SESSION['user_nom']; ?></h1>
-    <ul>
+    <header class="header-user">
+    <ul class="ul-user">
+        <li>
+            <i class="fa-solid fa-person fa-2xl"></i>
+        </li>
         <li>
             <a href="delete.php">Suppression du compte</a>
         </li>
@@ -32,7 +36,8 @@ $user = getUserById($pdo, $_SESSION['user_id']);
         </li>
     </ul>
     </header>
-    <main>
+    <h1 class="titre-user">Compte de <?php echo $_SESSION['user_nom']; ?></h1>
+    <main class="main-user">
         <h3>Infos Compte : </h3>
         <br>
         <p><strong> Email :</strong> <?php echo $user['email']; ?></p>

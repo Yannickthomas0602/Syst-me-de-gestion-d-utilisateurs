@@ -66,11 +66,48 @@ a:hover {
     background-color: #2980b9;
 }
 
-.btn.secondary {
-    background-color: var(--secondary-color);
+
+/* Style pour user.php */
+.header-user {
+    background-color: var(--primary-color);
+    display: flex;
+    color: white;
 }
 
-.btn.secondary:hover {
-    background-color: #2980b9;
+.titre-user {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.ul-user {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.ul-user a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: gray;
+}
+
+.main-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 

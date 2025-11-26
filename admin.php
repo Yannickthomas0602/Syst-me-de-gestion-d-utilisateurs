@@ -19,6 +19,7 @@ $admin = $stmt->fetchAll();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Espace Administateur</title>
+        <link rel="stylesheet" href="assets/css/style_admin.css">
     </head>
     <body>
     <header>
@@ -34,7 +35,7 @@ $admin = $stmt->fetchAll();
     </header>
     <main>
         <div name="liste_users">
-            <table>
+            <table border="2">
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
@@ -51,8 +52,8 @@ $admin = $stmt->fetchAll();
                     <td><?= $u['adresse']?></td>
                     <td><?= $u['role_name']?></td>
                     <td>
-                        <a href="edit.php?id=<?= $u['id'] ?>">Modifer</a> |
-                        <a href="changer_role.php?id=<?= $u['id'] ?>">Changer rôle</a>
+                        <a class="btn" href="edit.php?id=<?= $u['id'] ?>">Modifer</a>
+                        <a class="btn" href="changer_role.php?id=<?= $u['id'] ?>">Changer rôle</a>
                         <form action="delete_admin.php" method="POST" style="display:inline;">
                             <input type="hidden" name="id" value="<?= $u['id'] ?>">
                             <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">Supprimer</button>
@@ -62,7 +63,7 @@ $admin = $stmt->fetchAll();
                 <?php endforeach; ?>
             </table>    
         </div>
-        <div name="Ajout d'utilisateur">
+        <div class="ajout-utilisateur">
             <h3>Ajouter un utilisateur</h3>
             <form method="POST" action="add_user.php">
                 <input type="text" name="nom" placeholder="Insérer le nom de l'utilisateur" required>
