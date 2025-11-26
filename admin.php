@@ -1,12 +1,14 @@
 <?php
 session_start();
 require "fonctions.php";
-
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+$pdo = getDB();
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin ') {
     header("Location : login.php");
     exit;
 }
-$pdo = getDB();
+$stmt = $pdo->query("SELECT u.id, u.nom, u.email, u.adresse, r.role_name FROM users u JOIN roles r ON u.role_id = r.id");
+$admin = $stmt->fetchAll();
+
 ?>
 
 
@@ -35,9 +37,9 @@ $pdo = getDB();
             <fieldset>
                 <h3>Infos Compte : </h3>
                 <br>
-                <p><strong> Email :</strong> <?php echo $user['email']; ?></p>
+                <p><strong> Email :</strong> <?php echo $admin['email']; ?></p>
                 <br>
-                <p><strong> Adresse : </strong> <?php echo $user['adresse']; ?></p>
+                <p><strong> Adresse : </strong> <?php echo $admin['adresse']; ?></p>
                 <br>
                 <p><strong>Role </strong><?php echo $_SESSION['role']; ?></p>
             </fieldset>
@@ -52,7 +54,7 @@ $pdo = getDB();
                     <th>Rôle</th>
                     <th>Actions</th>
                 </tr>
-                <?php foreach ($users as $u): ?>
+                <?php foreach ($admin as $u): ?>
                 <tr>
                     <td><?= $u['id']?></td>
                     <td><?= $u['nom']?></td>

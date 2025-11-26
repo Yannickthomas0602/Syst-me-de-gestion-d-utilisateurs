@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['role'] = $user['role_name']; 
 
     // Redirection vers le bon espace, utilisateur ou admin 
-    if ($user['role_name'] === 'admin') {
+    if ($user['role_name'] === 'admin ') {
         header("Location: admin.php");
     } else {
         header("Location: user.php");
@@ -81,5 +81,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 </body>
 </html>
-
-html

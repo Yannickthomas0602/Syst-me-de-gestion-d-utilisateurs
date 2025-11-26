@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'fonction.php';
+require 'fonctions.php';
 $pdo = getDB();
 
 if (!isset($_GET['id'])) {
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <header>
             <ul>
                 <li>
-                    <a href="index.html.php">Accueil</a>
+                    <a href="index.html">Accueil</a>
                 </li>
                 <li>
                     <a href="logout.php">Déconnexion</a>
