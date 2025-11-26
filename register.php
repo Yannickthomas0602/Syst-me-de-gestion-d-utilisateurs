@@ -49,17 +49,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="nebula-dot" style="left: 10%; top: 15%;"></div>
     <div class="nebula-dot secondary" style="right: 8%; bottom: 22%;"></div>
 
-    <header class="topbar">
+    <header class="bar-nav">
         <nav class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="register.php">Inscription</a>
-            <a href="login.php">Connexion</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li><a href="login.php">Connexion</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -91,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="actions">
                         <button class="btn" type="submit">S'inscrire</button>
-                        <a class="inline-link" href="login.php">Déjà membre ?</a>
+                        <a class="btn secondary" href="login.php">Déjà membre ?</a>
                     </div>
                 </form>
             </section>

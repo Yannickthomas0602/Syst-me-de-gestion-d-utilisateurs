@@ -43,17 +43,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
-    <div class="nebula-dot" style="left: 6%; top: 22%;"></div>
-    <div class="nebula-dot secondary" style="right: 12%; bottom: 16%;"></div>
 
-    <header class="topbar">
+    <header class="bar-nav">
         <nav class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="register.php">Inscription</a>
-            <a href="login.php">Connexion</a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li><a href="login.php">Connexion</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -73,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="actions">
                         <button class="btn" type="submit">Se connecter</button>
-                        <a class="inline-link" href="register.php">Créer un compte</a>
+                        <a class="btn secondary" href="register.php">Créer un compte</a>
                     </div>
                 </form>
             </section>
