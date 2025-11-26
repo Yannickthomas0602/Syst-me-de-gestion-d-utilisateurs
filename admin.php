@@ -52,8 +52,11 @@ $admin = $stmt->fetchAll();
                     <td><?= $u['role_name']?></td>
                     <td>
                         <a href="edit.php?id=<?= $u['id'] ?>">Modifer</a> |
-                        <a href="delete.php?id=<?= $u['id'] ?>">Supprimer</a> |
                         <a href="changer_role.php?id=<?= $u['id'] ?>">Changer rôle</a>
+                        <form action="delete_admin.php" method="POST" style="display:inline;">
+                            <input type="hidden" name="id" value="<?= $u['id'] ?>">
+                            <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
                 <?php endforeach; ?>
