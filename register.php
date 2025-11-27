@@ -81,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="field">
                         <label for="adresse">Adresse physique</label>
-                        <input id="adresse" type="text" name="adresse" placeholder="N° et rue, ville" required>
+                        <input id="addressInput" type="text" name="adresse" placeholder="Tapez votre adresse..." required>
+                        <ul id="suggestions"></ul>
                     </div>
                     <div class="field">
                         <label for="password">Mot de passe</label>
@@ -99,5 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </section>
         </div>
     </main>
+    <footer>
+        <script src="assets/js/Adresse.js"></script>
+    </footer>
 </body>
 </html>
