@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
     </header>
 
-    <main class="page">
+    <main class="main-register">
         <div class="grid-two">
 
             <section class="card">

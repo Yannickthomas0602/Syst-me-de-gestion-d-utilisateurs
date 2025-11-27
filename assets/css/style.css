@@ -111,3 +111,10 @@ a:hover {
     margin-top: 20px;
 }
 
+.main-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
