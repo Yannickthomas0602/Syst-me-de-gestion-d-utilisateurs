@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require "fonctions.php";
 requireLogin();
@@ -27,7 +27,6 @@ requireLogin();
         <div class="grid-two">
             <section class="hero">
                 <div class="eyebrow">Bienvenue</div>
-                <h2>Salut <?php echo htmlspecialchars($_SESSION['user_nom']); ?> ?</h2>
                 <div class="actions">
                     <a class="btn" href="logout.php">Se déconnecter</a>
                     <a class="btn" href="delete.php">Supprimer le compte</a>
@@ -56,4 +55,4 @@ requireLogin();
         </div>
     </main>
 </body>
-</html>
+</html> -->

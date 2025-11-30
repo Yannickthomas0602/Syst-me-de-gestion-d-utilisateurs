@@ -118,3 +118,36 @@ a:hover {
     height: 200px;
 }
 
+
+.burger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none !important;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+    .nav-links.show {
+        display: flex !important;
+    }
+    .burger {
+        display: block;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

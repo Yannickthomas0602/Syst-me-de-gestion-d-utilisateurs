@@ -1,5 +1,19 @@
 # Système de gestion d'utilisateur
 
+### Description : 
+Gestion d'utilisateur permettant l'inscription, la connexion et la gestion des rôles via une interface web en HTML5 / CSS3 / JAVA SCRIPT / PHP / MySQL
+
+### Prérequis : 
+* Base de données SQL 
+* Serveur Local (XAMPP, WAMP, Laragon, etc.)
+
+### Fonctionnalité : 
+* Inscription et connexion des utilisateurs
+* Gestion des rôles (admin/utilisateur)
+* Suppression et modification des comptes
+* API pour suggestions d’adresses
+* Burger Menu responsive 
+ 
 ### Contenu du site :
 
 * Un fichier index.html, page d'accueil permettant de se connecter ou de s'inscrire 
@@ -17,3 +31,11 @@
 * Un fichier Adresse.js, utilise l'API BAN qui regroupe toutes les adresses françaises -> suggestions dans l'input adresse de register.php
 * Deux fichier de style CSS
 * Une base de donnée SQL qui regroupe tous les utilisateurs 
+* Fichier burger_menu.js, qui permet l'utilisation du "Menu Burger" via une interface mobile 
+
+### Installation : 
+1. Installer un serveur local avec XAMPP, WAMP, Laragon...
+2. Cloner le dépot 
+```bash 
+git clone https://github.com/Yannickthomas0602/Syst-me-de-gestion-d-utilisateurs.git
+

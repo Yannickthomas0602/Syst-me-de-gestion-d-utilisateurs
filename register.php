@@ -56,8 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="nebula-dot secondary" style="right: 8%; bottom: 22%;"></div>
 
     <header class="bar-nav">
+        <br>
+        <button class="burger" aria-label="Menu">&#9776;</button>
         <nav class="nav-links">
             <ul>
+                <!-- <li><i id="home-icon" class="fa-solid fa-house fa-2xl"></i></li> -->
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="register.php">Inscription</a></li>
                 <li><a href="login.php">Connexion</a></li>
@@ -101,6 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
     <footer>
+        <script src="assets/js/burger_menu.js"></script>
         <script src="assets/js/Adresse.js"></script>
     </footer>
 </body>
